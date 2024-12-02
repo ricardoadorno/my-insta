@@ -9,7 +9,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      DATABASE_URL: postgresql://postgres:123456@localhost:5432/my-insta?schema=public
+      DATABASE_URL: postgresql://postgres:123456@db:5432/my-insta?schema=public
     depends_on:
       - db
 
