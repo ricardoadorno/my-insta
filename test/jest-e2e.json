@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../",
+  "testRegex": "e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "coverageDirectory": "../coverage",
+  "testEnvironment": "node",
+  "moduleNameMapper": {
+    "^@services/(.*)$": "<rootDir>/src/services/$1",
+    "^@repositories/(.*)$": "<rootDir>/src/repositories/$1",
+    "^@dtos/(.*)$": "<rootDir>/src/dtos/$1",
+    "^@database/(.*)$": "<rootDir>/src/database/$1"
+  },
+  "moduleDirectories": ["node_modules", "src"]
+}

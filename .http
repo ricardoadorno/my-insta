@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:3000
+### Get All Users
+GET {{baseUrl}}/users
+
+### Get User By Id
+GET {{baseUrl}}/users/1
+
+### Create User
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "jogn@mail.com",
+  "password": "123456"
+}
+
+### Create Post
+POST {{baseUrl}}/posts
+Content-Type: application/json
+
+{
+  "title": "Post Title",
+  "description": "Post Description",
+  "image": "Post Image",
+  "authorId": 1
+}
+
+### Find All Posts By User
+GET {{baseUrl}}/posts?authorId=1
+
+### Create Comment
+POST {{baseUrl}}/comments
+Content-Type: application/json
+
+{
+  "content": "Comment Content",
+  "postId": 2,
+  "authorId": 1
+}
+
+### Find All Comments By Post
+GET {{baseUrl}}/comments?postId=1
