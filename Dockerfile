@@ -1,17 +1,17 @@
-FROM node:20    
+FROM node:20.11.1-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --production
+RUN npm cache clean --force
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
-RUN npx prisma migrate deploy
-
-RUN npm run build
+RUN npx prisma generate
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start:prod"]
+# Command to run the app
+CMD [  "npm", "run", "start:migrate:prod" ]
